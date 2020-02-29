@@ -1,6 +1,7 @@
 import unittest
 import task
 import math
+import datetime
 
 
 class TestCase(unittest.TestCase):
@@ -32,6 +33,18 @@ class TestCase(unittest.TestCase):
         input = [1, 2, 3, 4, 5]
         expected = [1, 4]
         self.assertNotEqual(expected, task.getelements(input))
+
+    def test7(self):
+        date1 = datetime.date(2014, 4, 25)
+        date2 = datetime.date(2014, 5, 14)
+        expected = 19
+        self.assertEqual(expected, task.daysbetween(date1, date2))
+
+    def test8(self):
+        date1 = datetime.date(2014, 4, 25)
+        date2 = datetime.date(2014, 5, 14)
+        expected = -19
+        self.assertNotEqual(expected, task.daysbetween(date1, date2))
 
 
 if __name__ == '__main__':
